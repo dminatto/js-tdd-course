@@ -6,7 +6,8 @@
   "scripts": {
     "prepush": "npm run lint",
     "lint": "./node_modules/.bin/eslint src/*.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/mocha src/tests/**/*.spec.js",
+    "test:watch": "./node_modules/.bin/mocha src/tests/**/*.spec.js --watch"
   },
   "repository": {
     "type": "git",
@@ -24,7 +25,9 @@
   },
   "homepage": "https://github.com/dminatto/js-tdd-course#readme",
   "devDependencies": {
+    "chai": "^4.3.4",
     "eslint": "^7.24.0",
-    "husky": "^6.0.0"
+    "husky": "^6.0.0",
+    "mocha": "^9.0.2"
   }
 }
