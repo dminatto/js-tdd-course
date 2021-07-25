@@ -1,59 +1,58 @@
-var expect = require('chai').expect;
-var calc = require('./../main.js');
+import { expect } from "chai";
+import * as calc from "./../main.js";
 
-describe('Calculator', function() {
-
-  describe('Smoke tests', function() {
-
-    it('should exist the calc lib', function() {
+describe("Calculator", () => {
+  describe("Smoke tests", () => {
+    it("should exist the calc lib", () => {
       expect(calc).to.exist;
     });
 
-    it('should exist the method `sum`', function() {
+    it("should exist the method `sum`", () => {
       expect(calc.sum).to.exist;
-      expect(calc.sum).to.be.a('function');
+      expect(calc.sum).to.be.a("function");
     });
 
-    it('should exist the method `sub`', function() {
+    it("should exist the method `sub`", () => {
       expect(calc.sub).to.exist;
-      expect(calc.sub).to.be.a('function');
+      expect(calc.sub).to.be.a("function");
     });
 
-    it('should exist the method `mult`', function() {
+    it("should exist the method `mult`", () => {
       expect(calc.mult).to.exist;
-      expect(calc.mult).to.be.a('function');
+      expect(calc.mult).to.be.a("function");
     });
 
-    it('should exist the method `div`', function() {
+    it("should exist the method `div`", () => {
       expect(calc.div).to.exist;
-      expect(calc.div).to.be.a('function');
+      expect(calc.div).to.be.a("function");
     });
-
   });
 
-
-  describe('Sum', function() {
-    it('should return the sum of two numbers', function() {
+  describe("Sum", () => {
+    it("should return the sum of two numbers", () => {
       expect(calc.sum(1, 2)).to.equal(3);
     });
   });
 
-  describe('Sub', function() {
-    it('should return the sub of two numbers', function() {
+  describe("Sub", () => {
+    it("should return the sub of two numbers", () => {
       expect(calc.sub(6, 2)).to.equal(4);
     });
   });
 
-  describe('Mult', function() {
-    it('should return the mult of two numbers', function() {
+  describe("Mult", () => {
+    it("should return the mult of two numbers", () => {
       expect(calc.mult(6, 2)).to.equal(12);
     });
   });
 
-  describe('Div', function() {
-    it('should return the div of two numbers', function() {
+  describe("Div", () => {
+    it("should return the div of two numbers", () => {
       expect(calc.div(6, 2)).to.equal(3);
     });
-  });
 
+    it("should return 'Is not possible to divide by 0' when div a number by 0", () => {
+      expect(calc.div(6, 0)).to.equal("Is not possible to divide by 0");
+    });
+  });
 });

@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "prepush": "npm run lint",
     "lint": "./node_modules/.bin/eslint src/*.js",
-    "test": "./node_modules/.bin/mocha src/tests/**/*.spec.js",
-    "test:watch": "./node_modules/.bin/mocha src/tests/**/*.spec.js --watch"
+    "test": "./node_modules/.bin/mocha src/tests/**/*.spec.js --require babel-register",
+    "test:watch": "./node_modules/.bin/mocha src/tests/**/*.spec.js --require babel-register --watch"
   },
   "repository": {
     "type": "git",
@@ -25,6 +26,8 @@
   },
   "homepage": "https://github.com/dminatto/js-tdd-course#readme",
   "devDependencies": {
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
     "chai": "^4.3.4",
     "eslint": "^7.24.0",
     "husky": "^6.0.0",
